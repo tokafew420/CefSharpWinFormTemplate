@@ -1,7 +1,6 @@
 ﻿using CefSharp;
 using CefSharp.WinForms;
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Tokafew420.CefSharpWinFormTemplate

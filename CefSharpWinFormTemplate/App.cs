@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace Tokafew420.CefSharpWinFormTemplate
 {
+    /// <summary>
+    /// An example of the application class.
+    /// </summary>
     internal class App
     {
         private Form _form;
@@ -14,6 +17,13 @@ namespace Tokafew420.CefSharpWinFormTemplate
         private SystemEvent _systemEvent;
         private ScriptEvent _scriptEvent;
 
+        /// <summary>
+        /// Initalizes a new instance of App
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="browser"></param>
+        /// <param name="systemEvent"></param>
+        /// <param name="scriptEvent"></param>
         internal App(Form form, ChromiumWebBrowser browser, SystemEvent systemEvent, ScriptEvent scriptEvent)
         {
             _form = form ?? throw new ArgumentNullException("form");
@@ -28,6 +38,13 @@ namespace Tokafew420.CefSharpWinFormTemplate
             _scriptEvent.On("long-running-task", (args) => OnExample3(args as object[]));
         }
 
+        /// <summary>
+        /// Handles the "test" event.
+        /// </summary>
+        /// <param name="args">The event parameters.</param>
+        /// <remarks>
+        /// If a name was passord, then reply with "Hello {name}", otherwise reply with a message indicating no name.
+        /// </remarks>
         internal void OnTest(object[] args)
         {
             Debug.WriteLine("Event received");
@@ -43,6 +60,14 @@ namespace Tokafew420.CefSharpWinFormTemplate
             }
         }
 
+        /// <summary>
+        /// Handles the "multi-args" event.
+        /// </summary>
+        /// <param name="args">The event parameters.</param>
+        /// <remarks>
+        /// Inspects the event parameters and responsd with a message indicating the type and value of each parameter.
+        /// This is a test/example of receiving/sending a message with multiple parameters.
+        /// </remarks>
         internal void OnExample1(object[] args)
         {
             Debug.WriteLine("Event received");
@@ -59,6 +84,14 @@ namespace Tokafew420.CefSharpWinFormTemplate
             _systemEvent.Emit("multi-args-reply", result, 1, -1.1, false);
         }
 
+        /// <summary>
+        /// Handles the "complex-arg" event.
+        /// </summary>
+        /// <param name="args">The event parameters.</param>
+        /// <remarks>
+        /// Inspects the event parameter as a complex object and repsond with the objects properties (i.e. name, type, and value).
+        /// This is a test/example of receiving/sending a message with a complex object.
+        /// </remarks>
         internal void OnExample2(object[] args)
         {
             Debug.WriteLine("Event received");
@@ -91,7 +124,16 @@ namespace Tokafew420.CefSharpWinFormTemplate
             });
         }
 
-        private static int  callCount = 0;
+        private static int callCount = 0;
+
+        /// <summary>
+        /// Handles the "long-running-task" event.
+        /// </summary>
+        /// <param name="args">The event parameters.</param>
+        /// <remarks>
+        /// This is a test/example to demostrate the async nature (non-blocking) of the events.
+        /// Note that callCount is used to show events completing out of order.
+        /// </remarks>
         internal void OnExample3(object[] args)
         {
             Debug.WriteLine("Event received");
