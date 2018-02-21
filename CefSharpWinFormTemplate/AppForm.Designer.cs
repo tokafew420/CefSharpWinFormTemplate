@@ -36,19 +36,21 @@
             // 
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(722, 445);
+            this.MainPanel.Size = new System.Drawing.Size(1925, 1061);
             this.MainPanel.TabIndex = 0;
             // 
             // AppForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 445);
+            this.ClientSize = new System.Drawing.Size(1925, 1061);
             this.Controls.Add(this.MainPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "AppForm";
-            this.Text = "CefSharpWinForm";
+            this.Text = "CefSharpWinFormTemplate";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AppForm_Closing);
             this.Load += new System.EventHandler(this.AppForm_Load);
             this.ResumeLayout(false);

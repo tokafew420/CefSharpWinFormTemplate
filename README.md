@@ -39,8 +39,6 @@ On the managed side:
 
 // Listen for the "test" event
 _scriptEvent.On("test", (args) => {
-    var tmp = args as object[];
-
     _systemEvent.Emit("test-repy", "Hello " + tmp[0]);
 });
 ```
