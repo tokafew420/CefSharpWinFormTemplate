@@ -32,10 +32,10 @@ namespace Tokafew420.CefSharpWinFormTemplate
             _scriptEvent = scriptEvent ?? throw new ArgumentNullException("scriptEvent");
 
             // Register event handlers
-            _scriptEvent.On("test", (args) => OnTest(args as object[]));
-            _scriptEvent.On("multi-args", (args) => OnExample1(args as object[]));
-            _scriptEvent.On("complex-arg", (args) => OnExample2(args as object[]));
-            _scriptEvent.On("long-running-task", (args) => OnExample3(args as object[]));
+            _scriptEvent.On("test", OnTest);
+            _scriptEvent.On("multi-args", OnExample1);
+            _scriptEvent.On("complex-arg", OnExample2);
+            _scriptEvent.On("long-running-task", OnExample3);
         }
 
         /// <summary>
