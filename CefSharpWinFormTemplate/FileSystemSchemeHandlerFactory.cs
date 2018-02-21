@@ -46,7 +46,7 @@ namespace Tokafew420.CefSharpWinFormTemplate
             {
                 root = root + Path.VolumeSeparatorChar;
             }
-            var filepath = root + uri.AbsolutePath;
+            var filepath = WebUtility.UrlDecode(root + uri.AbsolutePath);
 
             if (File.Exists(filepath))
             {

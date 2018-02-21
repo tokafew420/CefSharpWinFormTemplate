@@ -198,9 +198,7 @@
     <Content Include="Resources\lib\popper\popper.js" />
     <Content Include="Resources\lib\popper\popper.min.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\img\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>ECHO Copying Resources/ directory to output
