@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CefWinForm")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CefSharpWinFormTemplate")]
+[assembly: AssemblyDescription("Template for creating a CefSharp app.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Canal & River Trust")]
-[assembly: AssemblyProduct("CefWinForm")]
-[assembly: AssemblyCopyright("Copyright © Canal & River Trust 2015")]
+[assembly: AssemblyCompany("Tokafew420")]
+[assembly: AssemblyProduct("CefSharpWinFormTemplate")]
+[assembly: AssemblyCopyright("Copyright © 2015 Tokafew420")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

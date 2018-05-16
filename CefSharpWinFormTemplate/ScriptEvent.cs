@@ -52,7 +52,7 @@ namespace Tokafew420.CefSharpWinFormTemplate
                         try
                         {
                             // Try to deserialize each argument
-                            args[0] = JsonConvert.DeserializeObject(args[i] as string);
+                            args[i] = JsonConvert.DeserializeObject(args[i] as string);
                         }
                         catch
                         {
