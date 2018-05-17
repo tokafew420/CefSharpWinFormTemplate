@@ -50,31 +50,6 @@
         };
     }
 
-    /**
-     * Specialize implementation for system events.
-     */
-    class SystemEvent extends EventEmitter {
-        /**
-         * Extends the EventEmitter by attempting to parse the arguments to emit().
-         *
-         * @param {any} event The event name.
-         * @param {...} args Any number of arguemnts.
-         */
-        emit(event) {
-            var i, len, args = [].slice.call(arguments);
-
-            len = args.length;
-
-            for (i = 1; i < len; i++) {
-                try {
-                    args[i] = JSON.parse(args[i]);
-                } catch (err) { }
-            }
-
-            super.emit.apply(this, args);
-        }
-    }
-
     // Define global system event emitter.
-    window.systemEvent = new SystemEvent();
+    window.systemEvent = new window.EventEmitter();
 }(window));

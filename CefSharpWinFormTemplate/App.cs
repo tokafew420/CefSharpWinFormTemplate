@@ -77,8 +77,9 @@ namespace Tokafew420.CefSharpWinFormTemplate
 
             foreach (var obj in args)
             {
-                result += "; Type: " + (obj == null ? "null" : obj.GetType().ToString());
-                result += "; Value: " + obj;
+                result += $@";
+Type: {(obj == null ? "null" : obj.GetType().ToString())}
+; Value: {obj}";
             }
 
             _systemEvent.Emit("multi-args-reply", result, 1, -1.1, false);
@@ -108,9 +109,10 @@ namespace Tokafew420.CefSharpWinFormTemplate
 
                     foreach (var prop in expando)
                     {
-                        result += "; Name: " + prop.Key;
-                        result += "; Type: " + (prop.Value == null ? "null" : prop.Value.GetType().ToString());
-                        result += "; Value: " + prop.Value;
+                        result += $@"
+; Name: {prop.Key}
+; Type: {(prop.Value == null ? "null" : prop.Value.GetType().ToString())};
+; Value: {prop.Value}";
                     }
                 }
             }
@@ -145,7 +147,7 @@ namespace Tokafew420.CefSharpWinFormTemplate
             var sleepTime = (int)(new Random(DateTime.Now.Millisecond).NextDouble() * 10000);
             Thread.Sleep(sleepTime);
 
-            _systemEvent.Emit("delayed-reply", result + $" Did some work for: {sleepTime} seconds.");
+            _systemEvent.Emit("delayed-reply", result + $" Did some work for: {sleepTime} milliseconds.");
         }
     }
 }
